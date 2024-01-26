@@ -7,3 +7,11 @@
 
 // 請在下方寫下你的程式碼
 
+export async function fetchData<T>(url: string): Promise<T> {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error("Error while fetching data");
+  }
+  const data = await response.json();
+  return data;
+}

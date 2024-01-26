@@ -7,8 +7,17 @@
  * @param date - 一個日期物件
  * @returns - 回傳一個字串，表示格式化後的日期
  */
+
 export function formatDate(date: Date): string {
-    // 請在此處寫下你的程式碼
+  // 請在此處寫下你的程式碼
+
+  const formatZero = (num: number): string => (num > 9 ? `${num}` : `0${num}`);
+
+  const year = date.getFullYear();
+  const month = formatZero(date.getMonth() + 1);
+  const day = formatZero(date.getDate());
+
+  return `${year}-${month}-${day}`;
 }
 
 /**
@@ -21,5 +30,6 @@ export function formatDate(date: Date): string {
  * @returns - 回傳一個數字，表示四捨五入後的結果
  */
 export function roundNumber(num: number): number {
-    // 請在此處寫下你的程式碼
+  // 請在此處寫下你的程式碼
+  return Math.round(num)
 }
